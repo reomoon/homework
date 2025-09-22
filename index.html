@@ -61,6 +61,10 @@
                 <div class="bonus-controls">
                     <input type="number" id="bonus-input" min="1" max="60" value="5" placeholder="분">
                     <button id="add-bonus-btn" class="btn btn-small btn-bonus">추가</button>
+                    <button id="clear-bonus-btn" class="btn btn-small btn-clear" onclick="subtractTime()">차감</button>
+                </div>
+                <div class="notification-setting">
+                    <button id="notification-btn" class="btn btn-small btn-notification">🔔 알림 설정</button>
                 </div>
                 <div class="bonus-history" id="bonus-history">
                     <!-- 추가된 시간들이 여기에 표시됩니다 -->

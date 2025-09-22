@@ -253,6 +253,35 @@ section h2 {
     background: linear-gradient(135deg, #00b894, #00a085);
 }
 
+.btn-clear {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+}
+
+.btn-notification {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    margin-top: 10px;
+}
+
+.notification-setting {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.bonus-delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.bonus-delete-btn:hover {
+    background-color: rgba(255, 107, 107, 0.2);
+}
+
 .bonus-history {
     display: flex;
     flex-wrap: wrap;
