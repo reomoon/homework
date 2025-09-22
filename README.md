@@ -2,6 +2,14 @@
 
 아이들이 숙제를 재미있게 관리할 수 있는 모바일 웹 애플리케이션입니다!
 
+## 🔗 빠른 접속
+
+- **문시우**: https://reomoon.github.io/homework/#siwoo
+- **문서아**: https://reomoon.github.io/homework/#seoa
+- **기본 접속**: https://reomoon.github.io/homework/
+
+URL 뒤에 `#사용자명`을 붙여서 바로 해당 사용자로 접속할 수 있습니다!
+
 ## ✨ 주요 기능
 
 ### 🏠 자유시간 타이머
