@@ -75,6 +75,32 @@ body {
     opacity: 0.9;
 }
 
+/* 달력 탭용 사용자 토글 */
+.calendar-user-toggle {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 15px;
+    margin: 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.calendar-user-toggle .user-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.calendar-user-toggle .user-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.calendar-user-toggle .user-btn.active {
+    background: white;
+    color: #667eea;
+    border-color: white;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
 /* 탭 네비게이션 */
 .tab-navigation {
     display: flex;
@@ -159,6 +185,87 @@ section h2 {
     border-radius: 15px;
     padding: 20px;
     backdrop-filter: blur(10px);
+}
+
+.timer-display.clickable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timer-display.clickable:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
+}
+
+/* 남은 시간 표시 */
+.remaining-time {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.remaining-time h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.remaining-display {
+    font-size: 2em;
+    font-weight: 600;
+    color: #ffeaa7;
+}
+
+/* 추가 시간 설정 */
+.bonus-time-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.bonus-time-section h3 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.bonus-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.bonus-controls input {
+    width: 60px;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.btn-bonus {
+    background: linear-gradient(135deg, #00b894, #00a085);
+}
+
+.bonus-history {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.bonus-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    color: #ddd;
 }
 
 .timer-controls {
@@ -288,6 +395,24 @@ section h2 {
     color: #28a745;
 }
 
+.delete-btn {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.7em;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: #ff5252;
+    transform: scale(1.1);
+}
+
 /* 달력 섹션 */
 .calendar-section {
     background: linear-gradient(135deg, #ffecd2, #fcb69f);
@@ -295,7 +420,7 @@ section h2 {
 
 .weekly-calendar {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 8px;
 }
 
@@ -337,6 +462,20 @@ section h2 {
 
 .calendar-day.today .day-name {
     color: white;
+}
+
+.calendar-day.missed {
+    background: rgba(220, 53, 69, 0.1);
+    border-color: #dc3545;
+}
+
+.calendar-day.missed .day-status {
+    color: #dc3545;
+}
+
+.calendar-day.completed {
+    background: rgba(40, 167, 69, 0.1);
+    border-color: #28a745;
 }
 
 /* 성취 섹션 */
@@ -439,9 +578,22 @@ section h2 {
         font-size: 0.8em;
     }
     
-    .timer-display {
-        font-size: 2.5em;
-        padding: 15px;
+    .timer-display.clickable:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: scale(1.01);
+    }
+    
+    .remaining-display {
+        font-size: 1.8em;
+    }
+    
+    .bonus-controls {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .bonus-controls input {
+        width: 50px;
     }
     
     .timer-controls {
