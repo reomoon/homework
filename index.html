@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 숙제 타이머</title>
+    <meta name="description" content="아이들을 위한 재미있는 숙제 관리 타이머 앱">
+    <meta name="keywords" content="숙제, 타이머, 아이들, 교육, 시간관리">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <header class="header">
+            <h1>📚 숙제 타이머</h1>
+            <div class="user-toggle">
+                <button class="user-btn active" data-user="siou">👦 문시우</button>
+                <button class="user-btn" data-user="seoa">👧 문서아</button>
+            </div>
+            <div class="date-display">
+                <span id="current-date"></span>
+            </div>
+        </header>
+
+        <!-- 탭 네비게이션 -->
+        <nav class="tab-navigation">
+            <button class="tab-btn active" data-tab="timer-homework">📚 타이머 & 과제</button>
+            <button class="tab-btn" data-tab="calendar-achievement">📅 달력 & 성취</button>
+        </nav>
+
+        <!-- 페이지 1: 타이머 & 과제 -->
+        <div class="tab-content active" id="timer-homework">
+            <!-- 자유시간 타이머 -->
+        <section class="timer-section">
+            <h2>🏠 오늘 남은 자유시간</h2>
+            <div class="timer-display">
+                <span id="timer-minutes">00</span>:<span id="timer-seconds">00</span>
+            </div>
+            <div class="timer-controls">
+                <button id="start-btn" class="btn btn-start">⏳ 시작</button>
+                <button id="pause-btn" class="btn btn-pause">⏸️ 일시정지</button>
+                <button id="reset-btn" class="btn btn-reset">🔄 리셋</button>
+            </div>
+            <div class="timer-settings">
+                <label for="timer-input">시간 설정 (분):</label>
+                <input type="number" id="timer-input" min="1" max="180" value="30">
+                <button id="set-timer-btn" class="btn btn-small">설정</button>
+            </div>
+        </section>
+
+        <!-- 과제 체크리스트 -->
+        <section class="homework-section">
+            <h2>📝 과제 체크리스트</h2>
+            <div class="homework-list">
+                <div class="homework-item">
+                    <input type="checkbox" id="math" class="homework-checkbox">
+                    <label for="math">📐 수학 3장</label>
+                </div>
+                <div class="homework-item">
+                    <input type="checkbox" id="korean" class="homework-checkbox">
+                    <label for="korean">📖 국어 2장</label>
+                </div>
+            </div>
+            <button id="add-homework-btn" class="btn btn-add">➕ 과제 추가</button>
+        </section>
+        </div>
+
+        <!-- 페이지 2: 달력 & 성취 -->
+        <div class="tab-content" id="calendar-achievement">
+            <!-- 주간 달력 -->
+        <section class="calendar-section">
+            <h2>📅 이번 주 달성률</h2>
+            <div class="weekly-calendar">
+                <div class="calendar-day" data-day="0">
+                    <span class="day-name">일</span>
+                    <span class="day-status" id="day-0">⭕</span>
+                </div>
+                <div class="calendar-day" data-day="1">
+                    <span class="day-name">월</span>
+                    <span class="day-status" id="day-1">⭕</span>
+                </div>
+                <div class="calendar-day" data-day="2">
+                    <span class="day-name">화</span>
+                    <span class="day-status" id="day-2">⭕</span>
+                </div>
+                <div class="calendar-day" data-day="3">
+                    <span class="day-name">수</span>
+                    <span class="day-status" id="day-3">⭕</span>
+                </div>
+                <div class="calendar-day" data-day="4">
+                    <span class="day-name">목</span>
+                    <span class="day-status" id="day-4">⭕</span>
+                </div>
+                <div class="calendar-day" data-day="5">
+                    <span class="day-name">금</span>
+                    <span class="day-status" id="day-5">⭕</span>
+                </div>
+                <div class="calendar-day" data-day="6">
+                    <span class="day-name">토</span>
+                    <span class="day-status" id="day-6">⭕</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 성취감 보상 -->
+        <section class="achievement-section">
+            <h2>🏆 성취 현황</h2>
+            <div class="achievement-stats">
+                <div class="stat-item">
+                    <span class="stat-label">이번 주 완료율</span>
+                    <span class="stat-value" id="weekly-completion">0%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">이번 달 완료율</span>
+                    <span class="stat-value" id="monthly-completion">0%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">연속 달성일</span>
+                    <span class="stat-value" id="streak-days">0일</span>
+                </div>
+            </div>
+            <div class="achievement-message" id="achievement-message">
+                🌟 오늘도 화이팅! 🌟
+            </div>
+        </section>
+        </div>
+    </div>
+
+    <!-- 축하 팝업 -->
+    <div id="celebration-popup" class="popup hidden">
+        <div class="popup-content">
+            <h3>🎉 축하합니다! 🎉</h3>
+            <p id="celebration-message">일주일 개근 달성!</p>
+            <p>추가 자유시간 +10분!</p>
+            <button id="close-popup-btn" class="btn btn-primary">확인</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

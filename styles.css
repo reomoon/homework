@@ -1,0 +1,566 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 10px;
+    color: #333;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* 헤더 */
+.header {
+    background: linear-gradient(135deg, #ff6b6b, #feca57);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.header h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* 사용자 토글 버튼 */
+.user-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.user-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.user-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.user-btn.active {
+    background: white;
+    color: #ff6b6b;
+    border-color: white;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.date-display {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* 탭 네비게이션 */
+.tab-navigation {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 15px 10px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+    background: #e9ecef;
+    color: #333;
+}
+
+.tab-btn.active {
+    background: white;
+    color: #007bff;
+    border-bottom-color: #007bff;
+}
+
+/* 탭 컨텐츠 */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 섹션 공통 스타일 */
+section {
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+section h2 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #444;
+    font-weight: 500;
+}
+
+/* 타이머 섹션 */
+.timer-section {
+    text-align: center;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+}
+
+.timer-display {
+    font-size: 3em;
+    font-weight: 700;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.timer-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.timer-settings {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.timer-settings label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.timer-settings input {
+    width: 80px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 1em;
+}
+
+/* 버튼 스타일 */
+.btn {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-start {
+    background: linear-gradient(135deg, #55a3ff, #003d82);
+}
+
+.btn-pause {
+    background: linear-gradient(135deg, #fdcb6e, #e17055);
+}
+
+.btn-reset {
+    background: linear-gradient(135deg, #81ecec, #00b894);
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 0.8em;
+}
+
+.btn-add {
+    background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+    width: 100%;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00b894, #00a085);
+}
+
+/* 과제 섹션 */
+.homework-section {
+    background: #f8f9fa;
+}
+
+.homework-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.homework-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.homework-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+    accent-color: #00b894;
+}
+
+.homework-item label {
+    font-size: 1em;
+    cursor: pointer;
+    flex: 1;
+    color: #444;
+}
+
+.homework-item.completed {
+    opacity: 0.7;
+    background: #d4edda;
+}
+
+.homework-item.completed label {
+    text-decoration: line-through;
+    color: #28a745;
+}
+
+/* 달력 섹션 */
+.calendar-section {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+}
+
+.weekly-calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.calendar-day {
+    background: white;
+    border-radius: 10px;
+    padding: 15px 5px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    transform: scale(1.05);
+}
+
+.day-name {
+    display: block;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.day-status {
+    font-size: 1.5em;
+    display: block;
+}
+
+.calendar-day.completed .day-status {
+    color: #28a745;
+}
+
+.calendar-day.today {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+}
+
+.calendar-day.today .day-name {
+    color: white;
+}
+
+/* 성취 섹션 */
+.achievement-section {
+    background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+    color: white;
+    text-align: center;
+}
+
+.achievement-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.achievement-message {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 1.1em;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+
+/* 팝업 */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    max-width: 300px;
+    margin: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ff6b6b;
+}
+
+.popup-content p {
+    margin-bottom: 10px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 480px) {
+    .container {
+        margin: 5px;
+        border-radius: 15px;
+    }
+    
+    .user-btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+    
+    .tab-btn {
+        padding: 12px 8px;
+        font-size: 0.8em;
+    }
+    
+    .timer-display {
+        font-size: 2.5em;
+        padding: 15px;
+    }
+    
+    .timer-controls {
+        gap: 8px;
+    }
+    
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.85em;
+    }
+    
+    .weekly-calendar {
+        gap: 5px;
+    }
+    
+    .calendar-day {
+        padding: 10px 3px;
+    }
+    
+    .achievement-stats {
+        gap: 10px;
+    }
+    
+    section {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .user-btn {
+        padding: 5px 10px;
+        font-size: 0.75em;
+    }
+    
+    .tab-btn {
+        padding: 10px 5px;
+        font-size: 0.75em;
+    }
+    
+    .timer-display {
+        font-size: 2em;
+    }
+    
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.8em;
+    }
+    
+    .calendar-day {
+        padding: 8px 2px;
+    }
+    
+    .day-status {
+        font-size: 1.2em;
+    }
+}
+
+/* 애니메이션 */
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40%, 43% {
+        transform: translateY(-10px);
+    }
+    70% {
+        transform: translateY(-5px);
+    }
+    90% {
+        transform: translateY(-2px);
+    }
+}
+
+.bounce {
+    animation: bounce 1s ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    }
+    
+    .container {
+        background: #2c3e50;
+        color: #ecf0f1;
+    }
+    
+    .homework-section {
+        background: #34495e;
+    }
+    
+    .homework-item {
+        background: #3c4b5c;
+        color: #ecf0f1;
+    }
+    
+    .calendar-day {
+        background: #3c4b5c;
+        color: #ecf0f1;
+    }
+    
+    section {
+        border-bottom-color: #34495e;
+    }
+}
