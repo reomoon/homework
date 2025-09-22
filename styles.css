@@ -418,6 +418,20 @@ section h2 {
     background: linear-gradient(135deg, #ffecd2, #fcb69f);
 }
 
+.weekly-goal-info {
+    background: rgba(255, 255, 255, 0.9);
+    color: #e17055;
+    padding: 12px 20px;
+    margin: 15px 0 20px 0;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95em;
+    border: 2px solid rgba(225, 112, 85, 0.3);
+    box-shadow: 0 4px 15px rgba(225, 112, 85, 0.2);
+    animation: pulse 3s infinite;
+}
+
 .weekly-calendar {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -607,6 +621,12 @@ section h2 {
     
     .weekly-calendar {
         gap: 5px;
+    }
+    
+    .weekly-goal-info {
+        padding: 10px 15px;
+        margin: 10px 0;
+        font-size: 0.85em;
     }
     
     .calendar-day {
