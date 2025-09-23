@@ -65,6 +65,14 @@
                 </div>
                 <div class="notification-setting">
                     <button id="notification-btn" class="btn btn-small btn-notification">🔔 알림 설정</button>
+                    <div id="sound-settings" style="display: none; margin-top: 10px;">
+                        <label for="alarm-file" class="btn btn-small" style="cursor: pointer; margin: 5px;">
+                            🎵 알림음 선택
+                            <input type="file" id="alarm-file" accept="audio/*" style="display: none;">
+                        </label>
+                        <button id="test-sound-btn" class="btn btn-small">🔊 테스트</button>
+                        <button id="reset-sound-btn" class="btn btn-small">🔄 기본음</button>
+                    </div>
                 </div>
                 <div class="bonus-history" id="bonus-history">
                     <!-- 추가된 시간들이 여기에 표시됩니다 -->

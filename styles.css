@@ -234,10 +234,11 @@ section h2 {
 
 .bonus-controls {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
+    flex-wrap: wrap;
 }
 
 .bonus-controls input {
@@ -247,6 +248,7 @@ section h2 {
     border-radius: 8px;
     text-align: center;
     font-size: 1em;
+    flex-shrink: 0;
 }
 
 .btn-bonus {
@@ -631,12 +633,22 @@ section h2 {
     }
     
     .bonus-controls {
-        flex-direction: column;
-        gap: 8px;
+        flex-direction: row;
+        gap: 5px;
+        flex-wrap: wrap;
     }
     
     .bonus-controls input {
-        width: 50px;
+        width: 45px;
+        font-size: 0.9em;
+        padding: 6px;
+    }
+    
+    .bonus-controls .btn {
+        padding: 6px 8px;
+        font-size: 0.8em;
+        min-width: 50px;
+        flex: 0 0 auto;
     }
     
     .timer-controls {
@@ -763,5 +775,29 @@ section h2 {
     
     section {
         border-bottom-color: #34495e;
+    }
+}
+
+/* 매우 작은 화면 (320px 이하) */
+@media (max-width: 320px) {
+    .bonus-controls {
+        gap: 3px;
+    }
+    
+    .bonus-controls input {
+        width: 40px;
+        font-size: 0.85em;
+        padding: 5px;
+    }
+    
+    .bonus-controls .btn {
+        padding: 5px 6px;
+        font-size: 0.75em;
+        min-width: 45px;
+    }
+    
+    .btn-small {
+        padding: 4px 6px;
+        font-size: 0.7em;
     }
 }
